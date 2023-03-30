@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Listele";
+}
+
+@model List<Yazarlar>
+
+<h1>YAZARLAR</h1>
+<a href="/yazarlar/ekle" class="btn btn-danger">Yazar Ekle</a>
+<a class="btn" style="background-color:blue; color:white" asp-controller="Yazarlar" asp-action="Ekle">Yazar Ekle</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>yazarId</th>
+            <th>yazarAdi</th>
+            <th>yazarYasi</th>
+            <th>yazarUlkesi</th>
+            <th>Silme İşlemi</th>
+            <th>Güncelleme İşlemi</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.YazarId</td>
+                <td>@item.YazarAdi</td>
+                <td>@item.YazarYasi</td>
+                <td>@item.YazarUlkesi</td>
+                <td> <a class="btn btn-danger" asp-controller="yazarlar" asp-action="Sil" asp-route-id="@item.YazarId">Sil</a></td>
+                <td> <a class="btn btn-success" asp-controller="yazarlar" asp-action="Güncelle" asp-route-id="@item.YazarId">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Güncelle";
+}
+
+<h1>Güncelle</h1>
+
+@model Eserler
+
+<form asp-controller="eserler" asp-action="güncelle" method="post">
+    <input type="hidden" asp-for="EserId" />
+    <div class="mb-3">
+        <label asp-for="EserAdi" class="form-label">Eser İsmi</label>
+        <input type="text" class="form-control" asp-for="EserAdi">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Yazar" class="form-label">Yazar No</label>
+        <input type="text" class="form-control" asp-for="Yazar">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Kategori" class="form-label">Kategori No</label>
+        <input type="text" class="form-control" asp-for="Kategori">
+    </div>
+    <div class="mb-3">
+        <label asp-for="YayinTarihi" class="form-label">Yayın Tarihi</label>
+        <input type="text" class="form-control" asp-for="YayinTarihi">
+    </div>
+
+    <button class="btn btn-primary" type="submit">Eser Güncelle</button>
+</form>

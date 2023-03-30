@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Listele";
+}
+
+@model List<Eserler>
+
+<h1>ESERLER</h1>
+<a href="/eserler/ekle" class="btn btn-danger">Eser Ekle</a>
+<a class="btn" style="background-color:blue; color:white" asp-controller="Eserler" asp-action="Ekle">Eser Ekle</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>eserId</th>
+            <th>eserAdi</th>
+            <th>yazar</th>
+            <th>kategori</th>
+            <th>yayinTarihi</th>
+            <th>Silme İşlemi</th>
+            <th>Güncelleme İşlemi</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.EserId</td>
+                <td>@item.EserAdi</td>
+                <td>@item.Yazar</td>
+                <td>@item.Kategori</td>
+                <td>@item.YayinTarihi</td>
+                <td> <a class="btn btn-danger" asp-controller="Eserler" asp-action="Sil" asp-route-id="@item.EserId">Sil</a></td>
+                <td> <a class="btn btn-success" asp-controller="Eserler" asp-action="Güncelle" asp-route-id="@item.EserId">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

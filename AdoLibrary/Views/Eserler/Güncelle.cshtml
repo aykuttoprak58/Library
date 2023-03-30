@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "Güncelle";
+}
+
+@model EntityEserler
+
+<form asp-controller="eserler" asp-action="güncelle" method="post">
+        <input  type="hidden" class="form-control" asp-for="id">
+    <div class="mb-3">
+        <label asp-for="name" class="form-label">Eser İsmi</label>
+        <input type="text" class="form-control" asp-for="name">
+    </div>
+    <div class="mb-3">
+        <label asp-for="writer" class="form-label">Yazar No</label>
+        <input type="text" class="form-control" asp-for="writer">
+    </div>
+    <div class="mb-3">
+        <label asp-for="category" class="form-label">Kategori No</label>
+        <input type="text" class="form-control" asp-for="category">
+    </div>
+    <div class="mb-3">
+        <label asp-for="publishdate" class="form-label">Yayın Tarihi</label>
+        <input type="text" class="form-control" asp-for="publishdate">
+    </div>
+
+    <button class="btn btn-primary" type="submit">Eser Güncelle</button>
+</form>
+
