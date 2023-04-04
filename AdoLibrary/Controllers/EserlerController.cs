@@ -71,23 +71,5 @@ namespace AdoLibrary.Controllers
             return RedirectToAction("Listele");
         }
 
-        //[HttpGet]
-        //public IActionResult Sil(int id)
-        //{
-
-        //    EntityEserler eserler = DalEserler.EserSilme(id);
-        //    return View(eserler);
-        //}
-
-
-
-        //[HttpPost]
-        //public IActionResult Sil(EntityEserler model)
-        //{
-        //    DalEserler.EserSil(model.id);
-
-        //    return RedirectToAction("Listele");
-        //}
-
     }
 }
